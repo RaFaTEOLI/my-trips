@@ -1,6 +1,6 @@
 {
-  "name": "Next.js Boilerplate",
-  "short_name": "Next.js boilerplate with TypeScript",
+  "name": "My Trips",
+  "short_name": "My Trips",
   "icons": [
     {
       "src": "/img/icon-192.png",
@@ -14,7 +14,7 @@
     }
   ],
   "background_color": "#06092B",
-  "description": "Next.js boilerplate with TypeScript, ESLint, Prettier, Vitest, and styled-components",
+  "description": "A simple project to show the places I have visited in the world.",
   "display": "fullscreen",
   "start_url": "/",
   "theme_color": "#06092B"

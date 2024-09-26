@@ -6,9 +6,9 @@ import GlobalStyles from './styles/global';
 import Head from 'next/head';
 
 export const metadata: Metadata = {
-  title: 'Next.js Boilerplate',
+  title: 'My Trips',
   description:
-    'Next.js boilerplate with TypeScript, ESLint, Prettier, Vitest, and styled-components'
+    'A simple project to show the places I have visited in the world.'
 };
 
 const theme: DefaultTheme = {
