@@ -1,0 +1,3 @@
+{
+  "src/**/*": ["yarn eslint src --fix", "yarn test:staged"]
+}
