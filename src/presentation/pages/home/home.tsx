@@ -1,10 +1,9 @@
-import { JSX } from 'react';
+import dynamic from 'next/dynamic';
 
-export default function Home(): JSX.Element {
-  return (
-    <div>
-      <h1>My Trips</h1>
-      <a href="#">Link</a>
-    </div>
-  );
+const Map = dynamic(() => import('@/presentation/components/map/map'), {
+  ssr: false
+});
+
+export default function Home() {
+  return <Map />;
 }
