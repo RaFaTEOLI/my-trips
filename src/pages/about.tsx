@@ -1,4 +1,4 @@
-import AboutPage from '@/presentation/pages/about/about';
+import { AboutPage } from '@/presentation/pages';
 
 export default function About() {
   return <AboutPage />;

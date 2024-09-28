@@ -2,7 +2,7 @@ import { CloseOutline } from '@styled-icons/evaicons-outline/CloseOutline';
 import { LinkWrapper } from '@/presentation/components';
 import * as S from './about.styles';
 
-const AboutTemplate = () => (
+const About = () => (
   <S.Content>
     <LinkWrapper href="/">
       <CloseOutline size={32} />
@@ -19,4 +19,4 @@ const AboutTemplate = () => (
   </S.Content>
 );
 
-export default AboutTemplate;
+export default About;
