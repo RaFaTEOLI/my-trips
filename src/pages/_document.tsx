@@ -19,7 +19,15 @@ export default class MyDocument extends Document {
       const initialProps = await Document.getInitialProps(ctx);
       return {
         ...initialProps,
-        styles: [initialProps.styles, sheet.getStyleElement()]
+        styles: [
+          initialProps.styles,
+          sheet.getStyleElement(),
+          <link
+            key="leaflet-stylesheet"
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          />
+        ]
       };
     } finally {
       sheet.seal();
