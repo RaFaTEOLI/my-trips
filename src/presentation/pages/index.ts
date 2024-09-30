@@ -1,2 +1,2 @@
 export { default as HomePage } from './home/home';
-export { default as AboutPage } from './about/about';
+export { default as PageTemplate } from './page/page';
