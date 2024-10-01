@@ -10,11 +10,11 @@ type Place = {
   };
 };
 
-type Props = {
+export type MapProps = {
   places?: Place[];
 };
 
-const Map = ({ places }: Props) => (
+const Map = ({ places }: MapProps) => (
   <MapContainer
     center={[0, 0]}
     zoom={3}
