@@ -14,6 +14,9 @@ const nextConfig = {
   ...pwaConfig,
   compiler: {
     styledComponents: true
+  },
+  images: {
+    domains: ['us-west-2.graphassets.com']
   }
 };
 
