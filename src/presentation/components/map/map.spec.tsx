@@ -19,7 +19,7 @@ describe('Map Component', () => {
     const places = Array.from({ length: 2 }, () => ({
       id: faker.string.uuid(),
       name: faker.location.city(),
-      slug: faker.location.city().toLowerCase(),
+      slug: faker.location.city().toLowerCase().replace(' ', '-'),
       location: {
         latitude: faker.location.latitude(),
         longitude: faker.location.longitude()
@@ -36,7 +36,7 @@ describe('Map Component', () => {
     const places = Array.from({ length: 2 }, () => ({
       id: faker.string.uuid(),
       name: faker.location.city(),
-      slug: faker.location.city().toLowerCase(),
+      slug: faker.location.city().toLowerCase().replace(' ', '-'),
       location: {
         latitude: faker.location.latitude(),
         longitude: faker.location.longitude()
