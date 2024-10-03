@@ -25,7 +25,13 @@ export default function PlaceTemplate({ place }: PlaceTemplateProps) {
         <div dangerouslySetInnerHTML={{ __html: place.description.html }} />
       )}
       {place.gallery.map((image, index) => (
-        <Image key={`photo-${index}`} src={image.url} alt={place.name} />
+        <Image
+          key={`photo-${index}`}
+          src={image.url}
+          alt={place.name}
+          height={image.height || 300}
+          width={image.width || 300}
+        />
       ))}
     </>
   );
