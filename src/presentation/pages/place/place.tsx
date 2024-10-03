@@ -1,4 +1,8 @@
 import Image from 'next/image';
+import { CloseOutline } from '@styled-icons/evaicons-outline/CloseOutline';
+import * as S from './place.styles';
+import { useRouter } from 'next/router';
+import { LinkWrapper } from '@/presentation/components';
 
 type ImageProps = {
   url: string;
@@ -18,21 +22,36 @@ export type PlaceTemplateProps = {
 };
 
 export default function PlaceTemplate({ place }: PlaceTemplateProps) {
+  const router = useRouter();
+  if (router.isFallback) return null;
+
   return (
     <>
-      <h1>{place.name}</h1>
-      {!!place.description?.html && (
-        <div dangerouslySetInnerHTML={{ __html: place.description.html }} />
-      )}
-      {place.gallery.map((image, index) => (
-        <Image
-          key={`photo-${index}`}
-          src={image.url}
-          alt={place.name}
-          height={image.height || 300}
-          width={image.width || 300}
-        />
-      ))}
+      <LinkWrapper href="/">
+        <CloseOutline size={32} aria-label="Go back to map" />
+      </LinkWrapper>
+      <S.Wrapper>
+        <S.Container>
+          <S.Heading>{place.name}</S.Heading>
+
+          <S.Body
+            dangerouslySetInnerHTML={{ __html: place.description?.html || '' }}
+          />
+
+          <S.Gallery>
+            {place.gallery.map((image, index) => (
+              <Image
+                key={`photo-${index}`}
+                src={image.url}
+                alt={place.name}
+                width={1000}
+                height={600}
+                quality={75}
+              />
+            ))}
+          </S.Gallery>
+        </S.Container>
+      </S.Wrapper>
     </>
   );
 }
