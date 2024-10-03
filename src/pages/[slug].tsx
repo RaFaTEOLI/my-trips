@@ -3,7 +3,7 @@ import { GetPageBySlugQuery, GetPagesQuery } from '@/graphql/generated/graphql';
 import { GET_PAGE_BY_SLUG, GET_PAGES } from '@/graphql/queries';
 import { PageTemplate } from '@/presentation/pages';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
-import { useRouter } from 'next/dist/client/router';
+import { useRouter } from 'next/router';
 
 export default function Page({
   heading,
