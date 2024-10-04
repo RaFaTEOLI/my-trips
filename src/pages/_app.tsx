@@ -6,6 +6,7 @@ import GlobalStyles from './styles/global';
 import Head from 'next/head';
 
 import NextNprogress from 'nextjs-progressbar';
+import { NextSeo } from 'next-seo';
 
 export const metadata: Metadata = {
   title: 'My Trips',
@@ -26,7 +27,6 @@ export default function App({ Component, pageProps }: AppProps) {
       <ThemeProvider theme={theme}>
         <Head>
           <title>{metadata.title as string}</title>
-          <meta name="description" content={metadata.description as string} />
           <link rel="manifest" href="/manifest.json" />
           <meta name="theme-color" content="#06092b" />
         </Head>
@@ -37,6 +37,18 @@ export default function App({ Component, pageProps }: AppProps) {
           startPosition={0.3}
           stopDelayMs={200}
           height={3}
+        />
+        <NextSeo
+          openGraph={{
+            title: metadata.title as string,
+            description: metadata.description as string,
+            site_name: metadata.title as string
+          }}
+          twitter={{
+            handle: '@RafaTessarollo',
+            site: '@site',
+            cardType: 'summary_large_image'
+          }}
         />
       </ThemeProvider>
     </>
