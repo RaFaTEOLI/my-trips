@@ -6,7 +6,8 @@ import GlobalStyles from './styles/global';
 import Head from 'next/head';
 
 import NextNprogress from 'nextjs-progressbar';
-import { NextSeo } from 'next-seo';
+import { DefaultSeo } from 'next-seo';
+import seoConfig from 'next-seo.config';
 
 export const metadata: Metadata = {
   title: 'My Trips',
@@ -38,18 +39,7 @@ export default function App({ Component, pageProps }: AppProps) {
           stopDelayMs={200}
           height={3}
         />
-        <NextSeo
-          openGraph={{
-            title: metadata.title as string,
-            description: metadata.description as string,
-            site_name: metadata.title as string
-          }}
-          twitter={{
-            handle: '@RafaTessarollo',
-            site: '@site',
-            cardType: 'summary_large_image'
-          }}
-        />
+        <DefaultSeo {...seoConfig} />
       </ThemeProvider>
     </>
   );
