@@ -5,6 +5,8 @@ import { AppProps } from 'next/app';
 import GlobalStyles from './styles/global';
 import Head from 'next/head';
 
+import NextNprogress from 'nextjs-progressbar';
+
 export const metadata: Metadata = {
   title: 'My Trips',
   description:
@@ -30,6 +32,12 @@ export default function App({ Component, pageProps }: AppProps) {
         </Head>
         <GlobalStyles />
         <Component {...pageProps} />
+        <NextNprogress
+          color="#f231a5"
+          startPosition={0.3}
+          stopDelayMs={200}
+          height={3}
+        />
       </ThemeProvider>
     </>
   );
