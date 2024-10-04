@@ -35,6 +35,7 @@ export const GET_PLACES = gql`
       }
       description {
         html
+        text
       }
       gallery {
         url
